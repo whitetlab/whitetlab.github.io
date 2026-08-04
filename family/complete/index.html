@@ -1,1 +1,23 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>포트 가족 등록</title><style>body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5}main{max-width:520px;margin:64px auto;padding:24px;background:#fff;border-radius:16px;text-align:center}button{width:100%;padding:15px;margin-top:12px;border:0;border-radius:8px;background:#111;color:#fff;font-size:18px;font-weight:800}</style></head><body><main><h1>포트 앱에서 등록을 완료해주세요.</h1><p>이 링크를 포트가 설치된 휴대폰에서 열어주세요.</p><button id="copy">링크 복사</button><button id="share">다시 공유하기</button></main><script>(()=>{'use strict';const link=location.href;document.querySelector('#copy').onclick=async()=>{await navigator.clipboard.writeText(link);document.querySelector('#copy').textContent='복사했어요'};document.querySelector('#share').onclick=async()=>{if(navigator.share)await navigator.share({text:'포트 가족 등록 정보입니다.\n\n'+link});else await navigator.clipboard.writeText(link)}})();</script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>포트 가족 등록</title>
+  <link rel="stylesheet" href="/assets/site.css?build=20260804-open-app">
+  <script src="/assets/site.js?build=20260804-open-app" defer></script>
+</head>
+<body>
+  <main id="family-complete" class="wrap complete-page">
+    <h1>포트 앱에서 등록을 완료해주세요.</h1>
+    <p class="lead">이 링크를 포트가 설치된 휴대폰에서 열어주세요.</p>
+    <div class="complete-actions">
+      <button id="open-port-app" class="primary-button" type="button" hidden>포트 앱 열기</button>
+      <button id="copy-complete-link" class="secondary-button" type="button">링크 복사</button>
+      <button id="share-complete-link" class="secondary-button" type="button">다시 공유하기</button>
+    </div>
+    <p id="open-port-help" class="open-port-help" aria-live="polite"></p>
+  </main>
+</body>
+</html>

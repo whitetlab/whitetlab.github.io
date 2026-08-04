@@ -1,6 +1,43 @@
 (() => {
   'use strict';
 
+  function buildPortIntentUri(fragment) {
+    if (fragment.length > 3072 || !/^v1\.[rc]\.[A-Za-z0-9_-]+$/.test(fragment)) return '';
+    return `intent://family/complete?payload=${encodeURIComponent(fragment)}#Intent;scheme=portapp;package=com.whitetlab.port;end;`;
+  }
+
+  const completePage = document.querySelector('#family-complete');
+  if (completePage) {
+    const fragment = location.hash.substring(1);
+    const intentUri = buildPortIntentUri(fragment);
+    const openButton = document.querySelector('#open-port-app');
+    const copyCompleteButton = document.querySelector('#copy-complete-link');
+    const shareCompleteButton = document.querySelector('#share-complete-link');
+    const openHelp = document.querySelector('#open-port-help');
+    const originalLink = location.href;
+
+    if (intentUri) {
+      openButton.hidden = false;
+      openButton.addEventListener('click', () => {
+        openHelp.textContent = '포트 앱이 열리지 않으면\n오른쪽 위 메뉴에서 ‘다른 브라우저로 열기’를 눌러주세요.';
+        window.location.href = intentUri;
+      });
+    }
+
+    copyCompleteButton.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(originalLink);
+      copyCompleteButton.textContent = '복사했어요';
+    });
+
+    shareCompleteButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        await navigator.share({ text: `포트 가족 등록 정보입니다.\n\n${originalLink}` });
+        return;
+      }
+      await navigator.clipboard.writeText(originalLink);
+    });
+  }
+
   const form = document.querySelector('#family-request-form');
   if (!form) return;
 
