@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.whitetlab.port",
+      "sha256_cert_fingerprints": [
+        "8D:59:F5:3A:B0:C3:03:A0:B5:F2:B5:97:55:7D:9A:6E:E4:FF:B6:D2:7A:D0:4E:D5:55:F7:B4:26:21:63:2C:9C"
+      ]
+    }
+  }
+]
