@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>포트 화면 보내기</title>
+  <link rel="stylesheet" href="/assets/site.css?build=20260804-help-screen">
+</head>
+<body>
+  <main class="wrap complete-page">
+    <h1>포트에서 화면을 보내주세요.</h1>
+    <div class="complete-actions">
+      <button id="open-port-app" class="primary-button" type="button">포트 앱 열기</button>
+    </div>
+    <p id="open-port-help" class="open-port-help" aria-live="polite"></p>
+  </main>
+  <script>
+    (() => {
+      'use strict';
+      const button = document.querySelector('#open-port-app');
+      const help = document.querySelector('#open-port-help');
+      button.addEventListener('click', () => {
+        help.textContent = '포트 앱이 열리지 않으면\n오른쪽 위 메뉴에서 ‘다른 브라우저로 열기’를 눌러주세요.';
+        window.location.href = 'intent://help/screen#Intent;scheme=portapp;package=com.whitetlab.port;end;';
+      });
+    })();
+  </script>
+</body>
+</html>
