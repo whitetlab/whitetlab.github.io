@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -18,8 +18,18 @@
       <p class="eyebrow">휴대폰 화면 안내 앱</p>
       <h1 id="hero-title">막히는 화면에서<br>다음에 누를 곳을 알려드려요.</h1>
       <p class="lead">포트는 휴대폰 사용이 어려울 때<br>화면을 확인하고 다음에 누를 곳을<br>쉽게 알려주는 안내 앱입니다.</p>
-      <a class="primary-button" href="/family/request/">가족 등록 요청 보내기</a>
-      <p class="supporting">아이폰에서도 카카오톡이나 문자로<br>등록 요청을 보낼 수 있어요.</p>
+      <div class="home-actions">
+        <section class="home-action" aria-labelledby="help-link-title">
+          <h2 id="help-link-title">화면 도움 링크</h2>
+          <p>도움받을 사람이 등록되어 있다면<br>이 링크를 보내주세요.</p>
+          <a class="primary-button" href="/help/share/">화면 도움 링크 보내기</a>
+        </section>
+        <section class="home-action" aria-labelledby="family-link-title">
+          <h2 id="family-link-title">도움받을 사람 등록</h2>
+          <p>처음 한 번 가족의 이름과 번호를 등록해요.</p>
+          <a class="secondary-button" href="/family/request/">도움받을 사람 등록하기</a>
+        </section>
+      </div>
     </section>
 
     <section class="wrap section" aria-labelledby="features-title">
@@ -41,6 +51,7 @@
       <nav aria-label="하단 메뉴">
         <a href="/#hero-title">포트 소개</a>
         <a href="/privacy/">개인정보 보호</a>
+        <a href="/help/share/">화면 도움 링크</a>
         <a href="/family/request/">가족 등록</a>
       </nav>
       <p>© 2026 PORT<br>useportapp.com</p>

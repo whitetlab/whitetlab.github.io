@@ -1,6 +1,82 @@
 (() => {
   'use strict';
 
+  const fixedHelpLink = 'https://useportapp.com/help/screen/';
+  const fixedHelpShareText = `포트 화면 도움 링크입니다.\n\n아래 링크를 포트가 설치된 휴대폰에서 눌러주세요.\n\n${fixedHelpLink}`;
+
+  async function copyText(text, field, status, successMessage) {
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = successMessage;
+    } catch (_) {
+      field.focus();
+      field.select();
+      status.textContent = '링크를 선택했어요. 길게 눌러 복사해주세요.';
+    }
+  }
+
+  const helpSharePage = document.querySelector('#help-share');
+  if (helpSharePage) {
+    const field = document.querySelector('#help-screen-link');
+    const status = document.querySelector('#help-share-status');
+    const copyButton = document.querySelector('#copy-help-link');
+    const shareButton = document.querySelector('#share-help-link');
+    const smsLink = document.querySelector('#sms-help-link');
+    field.value = fixedHelpLink;
+    smsLink.href = `sms:?&body=${encodeURIComponent(fixedHelpShareText)}`;
+
+    copyButton.addEventListener('click', () => copyText(
+      fixedHelpLink,
+      field,
+      status,
+      '링크를 복사했어요.\n포트 사용자에게 카카오톡이나 문자로 보내주세요.',
+    ));
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ text: fixedHelpShareText });
+          return;
+        } catch (shareError) {
+          if (shareError.name === 'AbortError') return;
+        }
+      }
+      field.focus();
+      field.select();
+      status.textContent = '공유 기능을 열 수 없어요. 링크를 복사해 보내주세요.';
+    });
+  }
+
+  const helpScreenPage = document.querySelector('#help-screen');
+  if (helpScreenPage) {
+    const openButton = document.querySelector('#open-port-app');
+    const copyButton = document.querySelector('#copy-help-screen-link');
+    const shareButton = document.querySelector('#share-help-screen-link');
+    const openHelp = document.querySelector('#open-port-help');
+    openButton.addEventListener('click', () => {
+      openHelp.textContent = '포트 앱이 열리지 않으면\n오른쪽 위 메뉴에서 ‘다른 브라우저로 열기’를 눌러주세요.';
+      window.location.href = 'intent://help/screen#Intent;scheme=portapp;package=com.whitetlab.port;end;';
+    });
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(fixedHelpLink);
+        copyButton.textContent = '복사했어요';
+      } catch (_) {
+        openHelp.textContent = fixedHelpLink;
+      }
+    });
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ text: fixedHelpShareText });
+          return;
+        } catch (shareError) {
+          if (shareError.name === 'AbortError') return;
+        }
+      }
+      openHelp.textContent = '공유 기능을 열 수 없어요. 링크 복사를 이용해주세요.';
+    });
+  }
+
   function buildPortIntentUri(fragment) {
     if (fragment.length > 3072 || !/^v1\.[rc]\.[A-Za-z0-9_-]+$/.test(fragment)) return '';
     return `intent://family/complete?payload=${encodeURIComponent(fragment)}#Intent;scheme=portapp;package=com.whitetlab.port;end;`;

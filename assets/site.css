@@ -81,6 +81,10 @@ h3 { margin: 0; font-size: 21px; line-height: 1.45; }
 .primary-button { width: 100%; background: var(--black); color: var(--white); }
 .secondary-button { width: 100%; background: var(--white); color: var(--black); }
 .primary-button:active, .secondary-button:active { transform: translateY(1px); }
+.home-actions { display: grid; gap: 18px; margin-top: 34px; }
+.home-action { padding: 24px; border: 2px solid var(--black); border-radius: 16px; }
+.home-action h2 { margin-bottom: 8px; font-size: 25px; }
+.home-action p { margin-bottom: 20px; }
 
 :focus-visible { outline: 4px solid #2176ff; outline-offset: 3px; }
 .supporting { margin: 18px 0 0; color: var(--muted); font-size: 16px; text-align: center; }
@@ -121,6 +125,10 @@ input[aria-invalid="true"] { border-color: #b00020; }
 .complete-page h1 { font-size: clamp(34px, 9vw, 48px); }
 .complete-actions { display: grid; gap: 12px; margin-top: 30px; }
 .open-port-help { min-height: 74px; margin-top: 22px; color: var(--muted); font-weight: 700; white-space: pre-line; }
+.help-page { padding-bottom: 64px; }
+.help-prerequisite { display: grid; gap: 12px; }
+.help-prerequisite p { margin: 0; }
+.back-link { display: inline-block; margin-top: 24px; font-weight: 800; }
 
 .privacy-copy { padding-bottom: 70px; }
 .privacy-copy section { padding: 22px 0; border-top: 1px solid var(--line); }

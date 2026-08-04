@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>화면 도움 링크 보내기</title>
+  <link rel="stylesheet" href="/assets/site.css?build=20260804-help-share">
+  <script src="/assets/site.js?build=20260804-help-share" defer></script>
+</head>
+<body>
+  <header class="site-header wrap"><a class="brand" href="/" aria-label="PORT 홈"><span class="p-mark" aria-hidden="true">P</span><span>PORT</span></a></header>
+  <main id="help-share" class="wrap help-page">
+    <section class="page-head" aria-labelledby="help-share-title">
+      <h1 id="help-share-title">화면 도움 링크 보내기</h1>
+      <p class="lead">아래 링크를 카카오톡이나 문자로<br>포트 사용자에게 보내주세요.</p>
+      <p class="lead">포트 사용자가 링크를 누르면<br>화면 보내기를 시작할 수 있어요.</p>
+    </section>
+
+    <section class="form-card" aria-labelledby="send-link-label">
+      <label id="send-link-label" for="help-screen-link">보낼 링크</label>
+      <textarea id="help-screen-link" class="request-link" rows="3" readonly>https://useportapp.com/help/screen/</textarea>
+      <p id="help-share-status" class="copy-status" aria-live="polite"></p>
+      <div class="request-actions">
+        <button id="copy-help-link" class="primary-button" type="button">링크 복사</button>
+        <button id="share-help-link" class="secondary-button" type="button">카카오톡·문자로 공유</button>
+        <a id="sms-help-link" class="secondary-button" href="#">문자로 보내기</a>
+      </div>
+    </section>
+
+    <section class="notice-card help-prerequisite">
+      <p><strong>도움받을 사람이 먼저 등록되어 있어야 해요.</strong></p>
+      <p>아직 등록하지 않았다면:</p>
+      <a class="secondary-button" href="/family/request/">도움받을 사람 등록하기</a>
+    </section>
+    <a class="back-link" href="/">홈페이지로 돌아가기</a>
+  </main>
+</body>
+</html>
