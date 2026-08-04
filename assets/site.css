@@ -113,8 +113,9 @@ input[aria-invalid="true"] { border-color: #b00020; }
 .notice-card p:last-child { margin-bottom: 0; }
 .result { display: none; margin-top: 24px; padding: 22px; border: 2px solid var(--black); border-radius: 14px; background: var(--white); }
 .result.is-visible { display: block; }
-.fallback-actions { display: none; gap: 12px; margin-top: 18px; }
-.fallback-actions.is-visible { display: grid; }
+.request-link { width: 100%; min-height: 126px; padding: 12px; border: 2px solid #777; border-radius: 10px; background: var(--white); color: var(--black); font: 14px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; resize: vertical; word-break: break-all; }
+.request-actions { display: grid; gap: 12px; margin-top: 16px; }
+.copy-status { min-height: 52px; margin: 10px 0 0; color: var(--muted); font-size: 15px; font-weight: 700; }
 
 .privacy-copy { padding-bottom: 70px; }
 .privacy-copy section { padding: 22px 0; border-top: 1px solid var(--line); }

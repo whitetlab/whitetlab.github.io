@@ -17,8 +17,9 @@
       <h1 id="request-title">포트 사용자에게 도움을 줄 가족인가요?</h1>
       <p class="lead">이름과 휴대폰 번호를 입력하면<br>포트 사용자에게 등록 요청을<br>카카오톡이나 문자로 보낼 수 있어요.</p>
       <div class="notice-card">
-        <strong>현재 가족 등록 요청 기능을 연결하고 있어요.</strong><br>
-        입력 화면을 시험 중이며 포트 앱 등록은 다음 업데이트에서 완료됩니다.
+        <strong>아직 등록 완료가 아닙니다.</strong><br>
+        보낸 링크를 포트가 설치된 휴대폰에서 누르고<br>
+        ‘등록하기’를 눌러야 완료됩니다.
       </div>
     </section>
 
@@ -29,10 +30,14 @@
       <button class="primary-button" type="submit">가족 등록 요청 보내기</button>
       <section id="request-result" class="result" aria-live="polite">
         <h2>등록 요청이 준비됐어요.</h2>
-        <p>아직 등록 완료가 아닙니다.<br>보낸 링크를 포트가 설치된 휴대폰에서 누르고<br>‘등록하기’를 눌러야 완료됩니다.</p>
-        <div id="fallback-actions" class="fallback-actions">
-          <a id="sms-link" class="primary-button" href="#">문자로 보내기</a>
-          <button id="copy-link" class="secondary-button" type="button">링크 복사</button>
+        <p>아래 링크를 복사해서<br>포트 사용자에게 보내주세요.</p>
+        <label for="request-link">보낼 링크</label>
+        <textarea id="request-link" class="request-link" rows="5" readonly></textarea>
+        <p id="copy-status" class="copy-status" aria-live="polite"></p>
+        <div class="request-actions">
+          <button id="copy-link" class="primary-button" type="button">링크 복사</button>
+          <button id="share-link" class="secondary-button" type="button">카카오톡·문자로 공유</button>
+          <a id="sms-link" class="secondary-button" href="#">문자로 보내기</a>
         </div>
       </section>
     </form>
