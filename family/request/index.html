@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="포트 사용자에게 가족 등록 요청 보내기">
+  <title>포트 가족 등록</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header wrap"><a class="brand" href="/" aria-label="PORT 홈"><span class="p-mark" aria-hidden="true">P</span><span>PORT</span></a></header>
+  <main class="wrap">
+    <section class="page-head" aria-labelledby="request-title">
+      <p class="eyebrow">포트 가족 등록</p>
+      <h1 id="request-title">포트 사용자에게 도움을 줄 가족인가요?</h1>
+      <p class="lead">이름과 휴대폰 번호를 입력하면<br>포트 사용자에게 등록 요청을<br>카카오톡이나 문자로 보낼 수 있어요.</p>
+      <div class="notice-card">
+        <strong>현재 가족 등록 요청 기능을 연결하고 있어요.</strong><br>
+        입력 화면을 시험 중이며 포트 앱 등록은 다음 업데이트에서 완료됩니다.
+      </div>
+    </section>
+
+    <form id="family-request-form" class="form-card" novalidate>
+      <div class="field"><label for="name">내 이름</label><input id="name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="예: 아들 김백철" required></div>
+      <div class="field"><label for="phone">내 휴대폰 번호</label><input id="phone" name="phone" type="tel" maxlength="40" inputmode="tel" autocomplete="tel" placeholder="010-1234-5678" required></div>
+      <p id="form-error" class="error" role="alert" aria-live="polite"></p>
+      <button class="primary-button" type="submit">가족 등록 요청 보내기</button>
+      <section id="request-result" class="result" aria-live="polite">
+        <h2>등록 요청이 준비됐어요.</h2>
+        <p>아직 등록 완료가 아닙니다.<br>보낸 링크를 포트가 설치된 휴대폰에서 누르고<br>‘등록하기’를 눌러야 완료됩니다.</p>
+        <div id="fallback-actions" class="fallback-actions">
+          <a id="sms-link" class="primary-button" href="#">문자로 보내기</a>
+          <button id="copy-link" class="secondary-button" type="button">링크 복사</button>
+        </div>
+      </section>
+    </form>
+
+    <section class="notice-card" aria-labelledby="security-title">
+      <h2 id="security-title">안전하게 이용하세요</h2>
+      <p>입력한 정보는 서버에 저장하지 않아요.</p>
+      <p>포트 사용자가 휴대폰에서<br>‘등록하기’를 눌러야 최종 등록됩니다.</p>
+      <p>포트는 송금, 인증번호, 비밀번호를<br>요구하지 않습니다.</p>
+    </section>
+  </main>
+</body>
+</html>

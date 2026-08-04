@@ -3,63 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>포트</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: #ffffff;
-      color: #111111;
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-        "Noto Sans KR", sans-serif;
-    }
-
-    main {
-      width: 100%;
-      max-width: 480px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 4px solid #111111;
-      border-radius: 24px;
-      font-size: 54px;
-      font-weight: 800;
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: 36px;
-    }
-
-    p {
-      margin: 0;
-      font-size: 21px;
-      line-height: 1.6;
-    }
-  </style>
+  <meta name="description" content="휴대폰에서 다음에 누를 곳을 쉽게 알려주는 안내 앱, 포트">
+  <title>PORT | 휴대폰 화면 안내</title>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
-
 <body>
+  <header class="site-header wrap">
+    <a class="brand" href="/" aria-label="PORT 홈">
+      <span class="p-mark" aria-hidden="true">P</span><span>PORT</span>
+    </a>
+  </header>
   <main>
-    <div class="logo">P</div>
-    <h1>포트</h1>
-    <p>GitHub Pages 테스트가 정상적으로 작동하고 있습니다.</p>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="eyebrow">휴대폰 화면 안내 앱</p>
+      <h1 id="hero-title">막히는 화면에서<br>다음에 누를 곳을 알려드려요.</h1>
+      <p class="lead">포트는 휴대폰 사용이 어려울 때<br>화면을 확인하고 다음에 누를 곳을<br>쉽게 알려주는 안내 앱입니다.</p>
+      <a class="primary-button" href="/family/request/">가족 등록 요청 보내기</a>
+      <p class="supporting">아이폰에서도 카카오톡이나 문자로<br>등록 요청을 보낼 수 있어요.</p>
+    </section>
+
+    <section class="wrap section" aria-labelledby="features-title">
+      <h2 id="features-title">포트가 도와드리는 방법</h2>
+      <div class="card-list">
+        <article class="card"><span class="card-number" aria-hidden="true">1</span><h3>화면에서 누를 곳을 표시해요</h3></article>
+        <article class="card"><span class="card-number" aria-hidden="true">2</span><h3>사진과 화면을 서버에 저장하지 않아요</h3></article>
+        <article class="card"><span class="card-number" aria-hidden="true">3</span><h3>회원가입 없이 사용할 수 있어요</h3></article>
+      </div>
+    </section>
+
+    <section class="wrap section safety" aria-labelledby="safety-title">
+      <h2 id="safety-title">안전하게 이용하세요</h2>
+      <p>포트는 송금, 인증번호, 비밀번호를<br>요구하지 않습니다.</p>
+    </section>
   </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="하단 메뉴">
+        <a href="/#hero-title">포트 소개</a>
+        <a href="/privacy/">개인정보 보호</a>
+        <a href="/family/request/">가족 등록</a>
+      </nav>
+      <p>© 2026 PORT<br>useportapp.com</p>
+    </div>
+  </footer>
 </body>
 </html>
