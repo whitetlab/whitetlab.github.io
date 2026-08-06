@@ -3,19 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="포트 웹사이트 개인정보 보호 안내">
+  <meta name="description" content="포트 앱과 웹사이트 개인정보처리방침">
   <title>개인정보 보호 | PORT</title>
   <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
   <header class="site-header wrap"><a class="brand" href="/" aria-label="PORT 홈"><span class="p-mark" aria-hidden="true">P</span><span>PORT</span></a></header>
   <main class="wrap privacy-copy">
-    <header class="page-head"><p class="eyebrow">개인정보 보호</p><h1>가족 등록 요청 정보는 브라우저에서 만들어요.</h1></header>
-    <section><h2>서버로 보내지 않습니다</h2><p>웹사이트의 가족 등록 요청 양식은 입력한 이름과 휴대폰 번호를 서버로 전송하지 않습니다. 요청 정보는 현재 브라우저 안에서 만들어집니다.</p></section>
-    <section><h2>공유 링크에 포함됩니다</h2><p>이름, 휴대폰 번호와 요청 정보는 공유하는 URL의 fragment에 포함됩니다. 링크를 받은 사람만 내용을 전달할 수 있도록 링크를 신뢰하는 사람에게만 보내주세요.</p></section>
-    <section><h2>포트 사용자가 확인합니다</h2><p>링크를 연 것만으로 등록되지 않습니다. 포트 사용자가 앱에서 내용을 확인하고 ‘등록하기’를 눌러야 휴대폰에 저장됩니다.</p></section>
-    <section><h2>7일 동안 사용할 수 있습니다</h2><p>가족 등록 요청 링크의 유효기간은 만든 시점부터 7일입니다.</p></section>
-    <section><h2>안전 안내</h2><p>포트는 송금, 인증번호, 비밀번호를 요구하지 않습니다.</p></section>
+    <header class="page-head"><p class="eyebrow">개인정보 보호</p><h1>포트 개인정보처리방침</h1><p class="lead">포트는 화면 안내에 필요한 이미지와 가족 정보를 기기 중심으로 처리합니다. 화면 이미지, OCR로 읽은 문자와 가족 이름·전화번호를 포트 운영 서버로 전송하지 않습니다. 다만 Google ML Kit이 별도의 진단 정보를 Google에 전송할 수 있으며, 사용자가 화면 보내기를 선택하면 문자 앱으로 이미지와 수신인 전화번호가 전달됩니다.</p></header>
+    <section><h2>1. 앱 개요</h2><p>포트는 카카오톡, 카카오T, 티머니GO 화면을 촬영하거나 캡처해 현재 화면을 분석하고 다음에 누를 위치를 안내하는 Android 앱입니다. 투폰 모드는 카메라로 다른 휴대폰 화면을 촬영하고, 원폰 모드는 사용자가 Android 화면 공유를 허용한 뒤 현재 휴대폰 화면을 캡처합니다. 포트는 계정, 광고, Analytics, Crashlytics 또는 원격 로그 기능을 사용하지 않습니다.</p></section>
+    <section><h2>2. 카메라 촬영 이미지</h2><p>투폰 모드에서 카메라 권한을 사용해 다른 휴대폰 화면을 촬영합니다. 촬영 이미지는 앱 내부 캐시의 <code>CAP*.jpg</code> 임시파일과 메모리에 저장되며 갤러리에는 저장되지 않습니다. 이미지는 기기 안에서 OCR과 화면 분석에 사용되고 포트 운영 서버로 전송되지 않습니다. 정상 처리에서는 분석 후 임시파일을 삭제하지만, 삭제 오류나 앱의 비정상 종료가 발생하면 캐시에 남을 수 있습니다.</p></section>
+    <section><h2>3. 원폰 화면 캡처</h2><p>원폰 모드는 사용자가 Android의 화면 공유 동의 화면에서 허용한 경우에만 MediaProjection으로 화면을 캡처합니다. 화면 공유 세션 중에는 foreground service와 화면 위의 포트 캡처 버튼을 사용하며, 진행 중임을 알리는 foreground 알림을 생성합니다. 일반 안내용 캡처는 PNG 데이터로 메모리에만 보관되고 파일이나 갤러리에 저장되지 않으며 포트 운영 서버로 전송되지 않습니다. 새 캡처, 세션 종료·초기화 또는 앱 프로세스 종료 시 이전 메모리 데이터가 제거됩니다.</p></section>
+    <section><h2>4. OCR 처리</h2><p>포트는 Google ML Kit Text Recognition의 한국어와 라틴 문자 인식 모델을 사용합니다. 촬영·캡처 이미지, 인식된 문자와 OCR 결과는 기기 안에서 처리되며 Google 또는 포트 운영 서버로 전송되지 않습니다. 추가적인 화면 위치와 색상 분석도 기기 안에서 수행합니다.</p></section>
+    <section><h2>5. 화면 보내기 기능</h2><p>사용자가 화면 보내기를 선택하면 캡처 화면을 앱 내부 캐시의 <code>help_message/port_help_*.png</code> 파일로 만들고, 등록된 가족의 전화번호와 함께 Android 기본 문자 앱에 전달합니다. 포트가 문자를 자동으로 전송하지 않으며 사용자가 문자 앱에서 전송 여부를 결정합니다. 포트 운영 서버로는 전송되지 않지만, 사용자가 전송한 뒤의 이미지·전화번호·문자 처리는 문자 앱과 이동통신사의 정책을 따릅니다.</p></section>
+    <section><h2>6. 가족 이름·전화번호 저장</h2><p>가족 등록 요청 페이지에서 입력한 이름과 휴대폰 번호는 서버로 전송되지 않고 현재 브라우저 안에서 요청 링크로 만들어집니다. 정보는 URL의 query가 아닌 fragment에 Base64URL 형식으로 포함되며, 이는 암호화가 아니므로 링크는 신뢰하는 사람에게만 보내야 합니다. 링크를 연 것만으로 등록되지 않고 포트 사용자가 내용을 확인한 뒤 ‘등록하기’를 눌러야 앱에 저장됩니다. 등록 정보는 앱의 백업 제외 내부 저장소에 평문 JSON으로 보관되고 포트 운영 서버로 전송되지 않습니다. 등록 변경·해제 시 기존 파일을 덮어쓴 뒤 삭제하며 앱 삭제 시 앱 전용 저장소와 함께 삭제됩니다. 요청 링크의 유효기간은 만든 시점부터 7일입니다. 포트는 송금, 인증번호 또는 비밀번호를 요구하지 않습니다.</p></section>
+    <section><h2>7. 임시파일 보관과 삭제</h2><p>정상적인 투폰 촬영 파일은 OCR과 화면 분석이 끝나면 삭제됩니다. 오류, 강제 종료 또는 파일 삭제 실패 시 Android가 캐시를 회수하거나 앱을 삭제할 때까지 남을 수 있습니다. 화면 보내기용 PNG는 생성 후 즉시 삭제하지 않고, 24시간이 지난 파일을 다음 앱 시작 시 정리합니다. 앱을 다시 열지 않거나 문자 앱 연결에 실패하면 더 오래 남을 수 있으며 Android의 캐시 회수 또는 앱 삭제로도 제거됩니다. 일반 원폰 캡처는 파일을 만들지 않습니다.</p></section>
+    <section><h2>8. Google ML Kit 진단 정보</h2><p>OCR 입력 이미지, 인식된 문자와 결과는 Google 서버로 전송되지 않습니다. 이와 별도로 ML Kit은 진단과 사용량 분석을 위해 기기 제조사·모델·OS 및 빌드 정보, 앱 패키지명·버전, ML 가속기 정보와 설치 단위 식별자 등의 진단 정보를 Google에 HTTPS로 전송할 수 있습니다. 이 전송에는 ML Kit과 Google DataTransport가 사용됩니다. Google 측 보관 기간과 개발자가 개별 정보를 삭제하는 방법은 포트 코드에서 확인할 수 없습니다. 자세한 내용은 <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit Android 데이터 공개 안내</a>에서 확인할 수 있습니다.</p></section>
+    <section><h2>9. 권한 사용 목적</h2><p><strong>카메라</strong>는 투폰 화면 촬영에, <strong>다른 앱 위에 표시</strong>는 원폰 캡처 버튼 표시에 사용합니다. <strong>foreground service</strong>와 <strong>MediaProjection foreground service</strong>는 사용자가 허용한 원폰 화면 공유 세션을 유지하는 데 사용합니다. <strong>인터넷</strong>과 <strong>네트워크 상태</strong> 권한은 앱의 자체 서버 통신이 아니라 ML Kit 진단 전송에 사용될 수 있습니다. 포트는 마이크, 위치, 연락처, SMS 읽기·자동 전송, 외부 저장소 사진·영상 또는 접근성 서비스 권한을 사용하지 않습니다.</p></section>
+    <section><h2>10. 문의</h2><p>개인정보처리방침 또는 개인정보 처리에 관한 문의: <a href="mailto:whitetlabdev@gmail.com">whitetlabdev@gmail.com</a></p></section>
+    <section><h2>11. 시행일</h2><p>이 개인정보처리방침은 2026년 8월 6일부터 시행합니다.</p></section>
   </main>
   <footer class="site-footer"><div class="wrap"><nav aria-label="하단 메뉴"><a href="/">포트 소개</a><a href="/privacy/">개인정보 보호</a><a href="/family/request/">가족 등록</a></nav><p>© 2026 PORT<br>useportapp.com</p></div></footer>
 </body>
